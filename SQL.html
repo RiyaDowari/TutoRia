@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5b84895190.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Courses</title>
+    <link rel="icon" href="TutoRiaLogo.png" type="image/icon type">
+    <style>
+        /* Style the tab */
+        .tab {
+            float: left;
+            /* border: 1px solid #888; */
+            background-color: #fff;
+            width: 25%;
+            height: auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0px 5px 10px 3px #ddd;
+        }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 16px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+                /* Change background color of buttons on hover */
+                .tab button:hover {
+                    background-color: rgb(37 37 223 / 72%);
+                    color: white;
+                }
+
+                /* Create an active/current "tab button" class */
+                .tab button.active {
+                    background-color: rgb(37 37 223 / 82%);
+                    color: white;
+                }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            /*border: 1px solid #ccc;*/
+            width: 75%;
+            border-left: none;
+            height: auto;
+        }
+
+        .btn-primary {
+            background-color: #291cdb;
+            border-radius: 20px;
+            margin: 5px;
+            padding: 3px 10px;
+            font-size: 14px;
+        }
+
+        .video {
+            padding-left: 22px;
+        }
+
+        .accordion {
+            background-color: #fff;
+            color: #444;
+            cursor: pointer;
+            padding: 14px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+            .active, .accordion:hover {
+                background-color: rgb(37 37 223 / 72%);
+                color: white;
+            }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="navbar_top" class="navbar navbar-dark custom-navbar">
+            <div class="container" style="display:block;">
+                <a href="#" class="navbar-brand " style="display:inline-block;">
+                    <img class="Logo" src="TutoRiaLogo.png" width="100" height="100" />
+                </a>
+                <div class="pull-right">
+                    <ul class="navbar-menu">
+                        <li class="menu">
+                            <a class="btn btn-menu btn-Home text-center" style="text-transform: initial;" href="Index.html">
+                                <i class="fa-solid fa-house-chimney" style="margin-right:5px;"></i>Home
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a class="btn btn-menu btn-About text-center" style="text-transform: initial;" href="About.html">
+                                <i class="fa-solid fa-eject " style="margin-right:5px;"></i>About
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a class="btn btn-menu btn-Courses text-center" style="text-transform: initial;" href="Courses.html">
+                                <i class="fa-brands fa-discourse" style="margin-right:5px;"></i>Courses
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a class="btn btn-menu btn-Contact text-center" style="text-transform: initial;" href="Contact.html">
+                                <i class="fa-solid fa-address-book" style="margin-right:5px;"></i>Contact
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a class="btn btn-menu btn-login text-center" style="text-transform: initial;" href="Login.html">
+                                <i class="fa-solid fa-right-to-bracket" style="margin-right:5px;"></i>Login
+                            </a>
+                        </li>
+                        <li class="menu">
+                            <a class="btn btn-menu btn-SignUp text-center" style="text-transform: initial;" href="Registration.html">
+                                <i class="fa-solid fa-user-plus" style="margin-right:5px;"></i>SignUp
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="sub-title" style="margin: 20px 0px;">
+                        Python Programming
+                        <span style="float: right;">
+                            <a href="Courses.html" style="font-size: 16px; color: red; margin-top: 20px; margin-right: 50px;text-decoration:none;">Go to Courses >></a>
+                        </span>
+                    </h2>
+
+                    <div class="tab" style="margin-top: 30px;">
+                        <button class="tablinks" onclick="openCity(event, 'Introduction')" id="defaultOpen">Introduction</button>
+                        <button class="tablinks" onclick="openCity(event, 'HTML')">SQL Commands </button>
+                        <button class="tablinks" onclick="openCity(event, 'CSS')"> Queries and Subqueries</button>
+                        <button class="tablinks" onclick="openCity(event, 'Bootstrap')">Aggregate Functions</button>
+                        <button class="tablinks" onclick="openCity(event, 'Javascript')">Correlated Subquery </button>
+                        <button class="tablinks" onclick="openCity(event, 'DOM')">EXIST and NOT EXIST Subqueries</button>
+                        <button class="tablinks" onclick="openCity(event, 'Arrays')">Basic PL-SQL Programming</button>
+                        <button class="tablinks" onclick="openCity(event, 'Functions')">How SQL Query executes??</button>
+                        <button class="tablinks" onclick="openCity(event, 'Recursion')">Create table in SQL</button>
+                    </div>
+
+                    <div id="Introduction" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">Introduction</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/323H_mOOWQ4?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-49: Introduction to Structured Query Language | points regarding its Features and Syllabus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="HTML" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">SQL Commands </h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/vUj-kUEC_oA?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-50: All Types of SQL Commands with Example | DDL, DML, DCL, TCL and CONSTRAINTS | DBMS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="CSS" class="tabcontent">
+                        <h3 style="margin: 20px 20px;"> Queries and Subqueries</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/_yog7h4BokQ?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-55: SQL Queries and Subqueries (part-1) | Database Management System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>>
+                        </div>
+                    </div>
+
+                    <div id="Bootstrap" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">Aggregate Functions</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/Yr4pHPZCshA?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-63: SQL Aggregate Functions - SUM, AVG(n), COUNT, MIN, MAX Functions | DBMS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="Javascript" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">Correlated Subquery</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/0d419Vo2Po4?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-64: Correlated Subquery in SQL with Example | Imp for Placements, GATE, NET &amp; SQL certification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="DOM" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">EXIST and NOT EXIST Subqueries</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/wA9GJZcB618?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Lec-62: EXIST and NOT EXIST Subqueries(part-8) | Database Management System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="Arrays" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">Basic PL-SQL Programming</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/yFA_ZzMynv0?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Basic PL-SQL Programming(While, For Loop) With Execution | Part-2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="Functions" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">How SQL Query executes??</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/wP2giPPgwqI?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="How SQL Query executes?? Order of SQL Query Execution⏳🔄" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="Recursion" class="tabcontent">
+                        <h3 style="margin: 20px 20px;">Create table in SQL</h3>
+                        <div class="video">
+                            <iframe width="720" height="348" src="https://www.youtube.com/embed/R6Ps7aUNPE4?list=PLxCzCOWd7aiHqU4HKL7-SITyuSIcD93id" title="Create table in SQL with execution | SQL for Beginners | Oracle LIVE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="notes" style="margin-left: 28%; margin-top: 42%; margin-right: 7%; ">
+                        <h5>Detailed Notes</h5>
+                        <div style="box-shadow: 0px 5px 10px 3px #ddd; border-radius: 6px; ">
+                            <button class="accordion">Introduction</button>
+                            <div class="panel">
+                                <p>
+                                    Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.
+                                    <ul>
+                                        <li>
+                                            HTML: HTML stands for HyperText Markup Language. It is used to design the front end portion of web pages using markup language. It acts as a skeleton for a website since it is used to make the structure of a website.
+                                        </li>
+                                        <li>
+                                            CSS: Cascading Style Sheets fondly referred to as CSS is a simply designed language intended to simplify the process of making web pages presentable. It is used to style our website.
+                                        </li>
+                                        <li>
+                                            JavaScript: JavaScript is a scripting language used to provide a dynamic behavior to our website.
+                                        </li>
+                                        <li>
+                                            Bootstrap: Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular CSS framework for developing responsive, mobile-first websites. Nowadays, the websites are perfect for all browsers (IE, Firefox, and Chrome) and for all sizes of screens (Desktop, Tablets, Phablets, and Phones).
+                                        </li>
+                                    </ul>
+                                    <a href="https://www.geeksforgeeks.org/web-development/">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">SQL Commands</button>
+                            <div class="panel">
+                                <p>
+                                    HTML stands for HyperText Markup Language. It is used to design web pages using a markup language.
+                                    HTML is a combination of Hypertext and Markup language. Hypertext defines the link between web pages.
+                                    A markup language is used to define the text document within the tag which defines the structure of web pages.
+                                    This language is used to annotate (make notes for the computer) text so that a machine can understand it and manipulate text accordingly.
+                                    Most markup languages (e.g. HTML) are human-readable. The language uses tags to define what manipulation has to be done on the text.
+                                    HTML is a markup language used by the browser to manipulate text, images, and other content, in order to display it in the required format.
+                                    HTML was created by Tim Berners-Lee in 1991. The first-ever version of HTML was HTML 1.0, but the first standard version was HTML 2.0, published in 1995.
+                                    <a href="https://www.w3schools.com/html/default.asp">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">Queries and Subqueries</button>
+                            <div class="panel">
+                                <p>
+                                    CSS stands for Cascading Style Sheets. It is a style sheet language which is used to describe the look and formatting of a document written in markup language.
+                                    It provides an additional feature to HTML. It is generally used with HTML to change the style of web pages and user interfaces. It can also be used with any kind of XML documents including plain XML, SVG and XUL.
+                                    CSS is used along with HTML and JavaScript in most websites to create user interfaces for web applications and user interfaces for many mobile applications.
+                                    <a href="https://www.javatpoint.com/css-tutorial">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">Aggregate Functions</button>
+                            <div class="panel">
+                                <p>
+                                    Bootstrap is a widely-used open-source front-end framework for web development, providing a collection of HTML, CSS, and JavaScript components and tools that enable developers to build responsive, mobile-first websites with ease.
+                                    This Bootstrap tutorial is designd for beginners and experienced professional, covering basics and advanced concepts including including working with Bootstrap’s CSS classes, incorporating JavaScript plugins, and more.
+                                    This tutorial will help you with the knowledge and skills to create stunning and responsive websites.
+                                    By the end of this tutorial, you’ll have a solid understanding of Bootstrap’s capabilities and be able to apply them effectively in your web development projects.
+                                    <a href="https://www.geeksforgeeks.org/bootstrap/">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">Correlated Subquery</button>
+                            <div class="panel">
+                                <p>
+                                    JavaScript (js) is a light-weight object-oriented programming language which is used by several websites for scripting the webpages.
+                                    It is an interpreted, full-fledged programming language that enables dynamic interactivity on websites when applied to an HTML document.
+                                    It was introduced in the year 1995 for adding programs to the webpages in the Netscape Navigator browser.
+                                    Since then, it has been adopted by all other graphical web browsers. With JavaScript, users can build modern web applications to interact directly without reloading the page every time. The traditional website uses js to provide several forms of interactivity and simplicity.
+                                    Although, JavaScript has no connectivity with Java programming language. The name was suggested and provided in the times when Java was gaining popularity in the market.
+                                    In addition to web browsers, databases such as CouchDB and MongoDB uses JavaScript as their scripting and query language.
+                                    <a href="https://www.javatpoint.com/javascript-tutorial">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">EXIST and NOT EXIST Subqueries</button>
+                            <div class="panel">
+                                <p>
+                                    Bootstrap is a widely-used open-source front-end framework for web development, providing a collection of HTML, CSS, and JavaScript components and tools that enable developers to build responsive, mobile-first websites with ease.
+                                    This Bootstrap tutorial is designd for beginners and experienced professional, covering basics and advanced concepts including including working with Bootstrap’s CSS classes, incorporating JavaScript plugins, and more.
+                                    This tutorial will help you with the knowledge and skills to create stunning and responsive websites.
+                                    By the end of this tutorial, you’ll have a solid understanding of Bootstrap’s capabilities and be able to apply them effectively in your web development projects.
+                                    <a href="https://www.geeksforgeeks.org/bootstrap/">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">Basic PL-SQL Programming</button>
+                            <div class="panel">
+                                <p>
+                                    Bootstrap is a widely-used open-source front-end framework for web development, providing a collection of HTML, CSS, and JavaScript components and tools that enable developers to build responsive, mobile-first websites with ease.
+                                    This Bootstrap tutorial is designd for beginners and experienced professional, covering basics and advanced concepts including including working with Bootstrap’s CSS classes, incorporating JavaScript plugins, and more.
+                                    This tutorial will help you with the knowledge and skills to create stunning and responsive websites.
+                                    By the end of this tutorial, you’ll have a solid understanding of Bootstrap’s capabilities and be able to apply them effectively in your web development projects.
+                                    <a href="https://www.geeksforgeeks.org/bootstrap/">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">How SQL Query executes??</button>
+                            <div class="panel">
+                                <p>
+                                    Bootstrap is a widely-used open-source front-end framework for web development, providing a collection of HTML, CSS, and JavaScript components and tools that enable developers to build responsive, mobile-first websites with ease.
+                                    This Bootstrap tutorial is designd for beginners and experienced professional, covering basics and advanced concepts including including working with Bootstrap’s CSS classes, incorporating JavaScript plugins, and more.
+                                    This tutorial will help you with the knowledge and skills to create stunning and responsive websites.
+                                    By the end of this tutorial, you’ll have a solid understanding of Bootstrap’s capabilities and be able to apply them effectively in your web development projects.
+                                    <a href="https://www.geeksforgeeks.org/bootstrap/">Read More</a>
+                                </p>
+                            </div>
+
+                            <button class="accordion">Create table in SQL</button>
+                            <div class="panel">
+                                <p>
+                                    Bootstrap is a widely-used open-source front-end framework for web development, providing a collection of HTML, CSS, and JavaScript components and tools that enable developers to build responsive, mobile-first websites with ease.
+                                    This Bootstrap tutorial is designd for beginners and experienced professional, covering basics and advanced concepts including including working with Bootstrap’s CSS classes, incorporating JavaScript plugins, and more.
+                                    This tutorial will help you with the knowledge and skills to create stunning and responsive websites.
+                                    By the end of this tutorial, you’ll have a solid understanding of Bootstrap’s capabilities and be able to apply them effectively in your web development projects.
+                                    <a href="https://www.geeksforgeeks.org/bootstrap/">Read More</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="signUpSection" style="margin-top: 150px;">
+        <div class="container">
+            <div class="col-md-12" style="text-align: center;">
+                <img class="Logo" src="logo-color.png" width="100%" height="100%" style="border-radius: 50%; margin-top: 50px; width: 130px;" />
+                <h2 style="margin-top: 20px;">
+                    TUTORIA
+                </h2>
+                <p style="margin: 0px; padding: 0px 100px 50px;">
+                    Join the 1,000’s of students that have gotten HAPPY ENGLISH Get the best English lessons FOR YOU!
+                    Join the 1,000’s of students that have gotten HAPPY ENGLISH Get the best English lessons FOR YOU!
+                    Join the 1,000’s of students that have gotten HAPPY ENGLISH Get the best English lessons FOR YOU!
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up" style="color: #fff;"></i>
+    </button>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
